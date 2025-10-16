@@ -1,0 +1,112 @@
+{
+  "version": "1.0",
+  "name": "Drive Save Confirmation",
+  "template": "{\"type\":\"Card\",\"size\":\"sm\",\"children\":[{\"type\":\"Col\",\"gap\":3,\"children\":[{\"type\":\"Row\",\"gap\":3,\"children\":[{\"type\":\"Box\",\"background\":\"green-400\",\"radius\":\"full\",\"padding\":2,\"children\":[{\"type\":\"Icon\",\"name\":\"check\",\"color\":\"white\",\"size\":\"xl\",\"children\":[]}]},{\"type\":\"Col\",\"children\":[{\"type\":\"Title\",\"value\":\"Saved to Google Drive\",\"size\":\"sm\",\"children\":[]},{\"type\":\"Text\",\"value\":{{ (message) | tojson }},\"size\":\"sm\",\"color\":\"secondary\",\"children\":[]}]}]},{\"type\":\"Divider\",\"children\":[]},{\"type\":\"Row\",\"children\":[{\"type\":\"Text\",\"value\":\"File\",\"size\":\"sm\",\"color\":\"secondary\",\"children\":[]},{\"type\":\"Spacer\",\"children\":[]},{\"type\":\"Text\",\"value\":{{ (fileName) | tojson }},\"size\":\"sm\",\"weight\":\"semibold\",\"children\":[]}]},{\"type\":\"Button\",\"label\":\"Open in Drive\",\"iconEnd\":\"external-link\",\"onClickAction\":{\"type\":\"open.url\",\"handler\":\"client\",\"payload\":{\"url\":{{ (driveUrl) | tojson }}}},\"children\":[]}]}]}",
+  "jsonSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "widget",
+    "type": "object",
+    "properties": {
+      "fileName": {
+        "type": "string"
+      },
+      "message": {
+        "type": "string"
+      },
+      "driveUrl": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "required": [
+      "fileName",
+      "message",
+      "driveUrl"
+    ],
+    "additionalProperties": false
+  },
+  "outputJsonPreview": {
+    "type": "Card",
+    "size": "sm",
+    "children": [
+      {
+        "type": "Col",
+        "gap": 3,
+        "children": [
+          {
+            "type": "Row",
+            "gap": 3,
+            "children": [
+              {
+                "type": "Box",
+                "background": "green-400",
+                "radius": "full",
+                "padding": 2,
+                "children": [
+                  {
+                    "type": "Icon",
+                    "name": "check",
+                    "color": "white",
+                    "size": "xl"
+                  }
+                ]
+              },
+              {
+                "type": "Col",
+                "children": [
+                  {
+                    "type": "Title",
+                    "value": "Saved to Google Drive",
+                    "size": "sm"
+                  },
+                  {
+                    "type": "Text",
+                    "value": "Your file has been saved successfully.",
+                    "size": "sm",
+                    "color": "secondary"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Divider"
+          },
+          {
+            "type": "Row",
+            "children": [
+              {
+                "type": "Text",
+                "value": "File",
+                "size": "sm",
+                "color": "secondary"
+              },
+              {
+                "type": "Spacer"
+              },
+              {
+                "type": "Text",
+                "value": "TestDOC",
+                "size": "sm",
+                "weight": "semibold"
+              }
+            ]
+          },
+          {
+            "type": "Button",
+            "label": "Open in Drive",
+            "iconEnd": "external-link",
+            "onClickAction": {
+              "type": "open.url",
+              "handler": "client",
+              "payload": {
+                "url": "https://drive.google.com/file/d/FILE_ID/view"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "encodedWidget": "eyJpZCI6Ijk4YTc5MWM0LWU3ODctNGQ1Zi05OWUwLWYxZDJlZWI3MmM3YiIsIm5hbWUiOiJEcml2ZSBTYXZlIENvbmZpcm1hdGlvbiIsInZpZXciOiI8Q2FyZCBzaXplPVwic21cIj5cbiAgPENvbCBnYXA9ezN9PlxuICAgIDxSb3cgZ2FwPXszfT5cbiAgICAgIDxCb3ggYmFja2dyb3VuZD1cImdyZWVuLTQwMFwiIHJhZGl1cz1cImZ1bGxcIiBwYWRkaW5nPXsyfT5cbiAgICAgICAgPEljb24gbmFtZT1cImNoZWNrXCIgY29sb3I9XCJ3aGl0ZVwiIHNpemU9XCJ4bFwiIC8-XG4gICAgICA8L0JveD5cbiAgICAgIDxDb2w-XG4gICAgICAgIDxUaXRsZSB2YWx1ZT1cIlNhdmVkIHRvIEdvb2dsZSBEcml2ZVwiIHNpemU9XCJzbVwiIC8-XG4gICAgICAgIDxUZXh0IHZhbHVlPXttZXNzYWdlfSBzaXplPVwic21cIiBjb2xvcj1cInNlY29uZGFyeVwiIC8-XG4gICAgICA8L0NvbD5cbiAgICA8L1Jvdz5cbiAgICA8RGl2aWRlciAvPlxuICAgIDxSb3c-XG4gICAgICA8VGV4dCB2YWx1ZT1cIkZpbGVcIiBzaXplPVwic21cIiBjb2xvcj1cInNlY29uZGFyeVwiIC8-XG4gICAgICA8U3BhY2VyIC8-XG4gICAgICA8VGV4dCB2YWx1ZT17ZmlsZU5hbWV9IHNpemU9XCJzbVwiIHdlaWdodD1cInNlbWlib2xkXCIgLz5cbiAgICA8L1Jvdz5cbiAgICA8QnV0dG9uXG4gICAgICBsYWJlbD1cIk9wZW4gaW4gRHJpdmVcIlxuICAgICAgaWNvbkVuZD1cImV4dGVybmFsLWxpbmtcIlxuICAgICAgb25DbGlja0FjdGlvbj17eyB0eXBlOiBcIm9wZW4udXJsXCIsIGhhbmRsZXI6IFwiY2xpZW50XCIsIHBheWxvYWQ6IHsgdXJsOiBkcml2ZVVybCB9IH19XG4gICAgLz5cbiAgPC9Db2w-XG48L0NhcmQ-IiwiZGVmYXVsdFN0YXRlIjp7ImZpbGVOYW1lIjoiVGVzdERPQyIsIm1lc3NhZ2UiOiJZb3VyIGZpbGUgaGFzIGJlZW4gc2F2ZWQgc3VjY2Vzc2Z1bGx5LiIsImRyaXZlVXJsIjoiaHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL2ZpbGUvZC9GSUxFX0lEL3ZpZXcifSwic3RhdGVzIjpbXX0"
+}
